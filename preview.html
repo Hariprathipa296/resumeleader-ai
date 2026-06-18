@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview Resume - ResumeLeader AI</title>
+  <meta name="description" content="Preview your resume instantly and download a clean, ATS-optimized PDF document ready to send to recruiters.">
+  <link rel="stylesheet" href="style.css">
+  <!-- html2pdf.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5IfS5Q/Go6XXnY401qnHOkq85hdgOdYB15YK8vFyODsTdB8ofVU5HCx5E4mgWRDCcryDAkgdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <!-- Top User Identity Bar -->
+  <div class="user-identity-bar" id="top-user-bar">
+    <span>Developer: Harirathipa R</span>
+    <span>Email: prathipa296@gmail.com</span>
+  </div>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-section" id="brand-logo">
+        <div class="logo-icon">R</div>
+        <span class="logo-text">ResumeLeader AI</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Templates</a>
+        <a href="form.html" class="nav-link">Build Resume</a>
+        <a href="preview.html" class="nav-link active">Preview</a>
+        <a href="https://digitalheroesco.com" target="_blank" class="hero-btn" id="header-hero-btn">Built for Digital Heroes</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Step Wizard Banner -->
+  <section class="step-banner">
+    <h1>Preview & Export Resume</h1>
+    <p>Review your content, select different layouts, and download your ATS-ready PDF.</p>
+    <div class="steps-indicator">
+      <div class="step-node completed" id="step-1-node">1<span class="step-label">Choose Template</span></div>
+      <div class="step-node completed" id="step-2-node">2<span class="step-label">Fill Details</span></div>
+      <div class="step-node active" id="step-3-node">3<span class="step-label">Download PDF</span></div>
+    </div>
+  </section>
+  <!-- Main Preview Layout -->
+  <main class="preview-page-container">
+    
+    <!-- Controls Sidebar -->
+    <aside class="preview-sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">Change Template</h3>
+        <div class="preview-template-list" id="preview-template-selector">
+          <div class="preview-temp-option" data-template="ats" id="opt-ats">
+            <div class="preview-temp-dot"></div>
+            <span>ATS Minimalist</span>
+          </div>
+          <div class="preview-temp-option" data-template="corporate" id="opt-corp">
+            <div class="preview-temp-dot"></div>
+            <span>Professional Corporate</span>
+          </div>
+          <div class="preview-temp-option" data-template="creative" id="opt-creative">
+            <div class="preview-temp-dot"></div>
+            <span>Elegant Creative</span>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-section" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <button class="btn btn-primary btn-block" id="btn-download-pdf">
+          <span>Download PDF</span>
+        </button>
+        <a href="form.html" class="btn btn-secondary btn-block" id="btn-edit-resume">
+          <span>Edit Details</span>
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">Developer Info</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem;"><strong>Name:</strong> Harirathipa R</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;"><strong>Email:</strong> prathipa296@gmail.com</p>
+        <a href="https://digitalheroesco.com" target="_blank" class="hero-btn" style="width: 100%; justify-content: center;" id="sidebar-hero-btn">Built for Digital Heroes</a>
+      </div>
+    </aside>
+    <!-- Document Preview Panel -->
+    <section class="resume-paper-container">
+      <div class="resume-paper template-ats" id="resume-document-paper">
+        <!-- Rendered Resume content will go here dynamically -->
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="logo-section">
+          <div class="logo-icon">R</div>
+          <span class="logo-text" style="color: white;">ResumeLeader AI</span>
+        </div>
+        <div class="footer-creator" id="footer-creator-details">
+          <span>Created By: Harirathipa R</span>
+          <span>Contact: prathipa296@gmail.com</span>
+        </div>
+        <div>
+          <a href="https://digitalheroesco.com" target="_blank" class="hero-btn" id="footer-hero-btn">Built for Digital Heroes</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ResumeLeader AI. All rights reserved.</p>
+        <p>Premium Free ATS-Friendly Resume Builder</p>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

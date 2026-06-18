@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Form - ResumeLeader AI</title>
+  <meta name="description" content="Enter your education, work experience, skills, and projects to generate your resume instantly.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top User Identity Bar -->
+  <div class="user-identity-bar" id="top-user-bar">
+    <span>Developer: Harirathipa R</span>
+    <span>Email: prathipa296@gmail.com</span>
+  </div>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-section" id="brand-logo">
+        <div class="logo-icon">R</div>
+        <span class="logo-text">ResumeLeader AI</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Templates</a>
+        <a href="form.html" class="nav-link active">Build Resume</a>
+        <a href="preview.html" class="nav-link">Preview</a>
+        <a href="https://digitalheroesco.com" target="_blank" class="hero-btn" id="header-hero-btn">Built for Digital Heroes</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Step Wizard Banner -->
+  <section class="step-banner">
+    <h1>Fill in Your Details</h1>
+    <p>Enter your professional details. Your progress is automatically saved locally.</p>
+    <div class="steps-indicator">
+      <div class="step-node completed" id="step-1-node">1<span class="step-label">Choose Template</span></div>
+      <div class="step-node active" id="step-2-node">2<span class="step-label">Fill Details</span></div>
+      <div class="step-node" id="step-3-node">3<span class="step-label">Download PDF</span></div>
+    </div>
+  </section>
+  <!-- Builder Form Main Area -->
+  <main class="form-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="builder-sidebar">
+      <ul class="sidebar-menu" id="form-tab-menu">
+        <li class="menu-item active" data-target="personal-info">
+          <button type="button">Personal Details</button>
+        </li>
+        <li class="menu-item" data-target="education">
+          <button type="button">Education</button>
+        </li>
+        <li class="menu-item" data-target="experience">
+          <button type="button">Work Experience</button>
+        </li>
+        <li class="menu-item" data-target="projects">
+          <button type="button">Projects</button>
+        </li>
+        <li class="menu-item" data-target="skills">
+          <button type="button">Skills</button>
+        </li>
+        <li class="menu-item" data-target="certifications">
+          <button type="button">Certifications</button>
+        </li>
+      </ul>
+    </aside>
+    <!-- Form Container wrapper -->
+    <div class="builder-form-wrapper">
+      <form id="resume-builder-form">
+        
+        <!-- Header title of section -->
+        <div class="form-header">
+          <h2 id="section-title-label">Personal Details</h2>
+          <span class="tag" style="background-color: var(--accent); color: var(--primary-dark);" id="selected-template-badge">Template: ATS Minimalist</span>
+        </div>
+        <!-- Body sections -->
+        <div class="form-body">
+          
+          <!-- SECTION 1: Personal Info -->
+          <div class="form-step-content active" id="sec-personal-info">
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" class="form-control" placeholder="e.g. John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="e.g. johndoe@gmail.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" class="form-control" placeholder="e.g. +1 (555) 019-2834" required>
+              </div>
+              <div class="form-group full-width">
+                <label for="linkedin">LinkedIn Profile URL</label>
+                <input type="url" id="linkedin" class="form-control" placeholder="e.g. https://linkedin.com/in/johndoe">
+              </div>
+            </div>
+          </div>
+          <!-- SECTION 2: Education (Dynamic List) -->
+          <div class="form-step-content" id="sec-education">
+            <div class="dynamic-list" id="education-list-container">
+              <!-- Education elements will be rendered dynamically here by app.js -->
+            </div>
+            <div class="add-more-container">
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-add-education">
+                + Add Education
+              </button>
+            </div>
+          </div>
+          <!-- SECTION 3: Work Experience (Dynamic List) -->
+          <div class="form-step-content" id="sec-experience">
+            <div class="dynamic-list" id="experience-list-container">
+              <!-- Work experience items will be rendered dynamically -->
+            </div>
+            <div class="add-more-container">
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-add-experience">
+                + Add Work Experience
+              </button>
+            </div>
+          </div>
+          <!-- SECTION 4: Projects (Dynamic List) -->
+          <div class="form-step-content" id="sec-projects">
+            <div class="dynamic-list" id="projects-list-container">
+              <!-- Projects items will be rendered dynamically -->
+            </div>
+            <div class="add-more-container">
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-add-project">
+                + Add Project
+              </button>
+            </div>
+          </div>
+          <!-- SECTION 5: Skills (List of Tags / Comma Separated) -->
+          <div class="form-step-content" id="sec-skills">
+            <div class="form-group">
+              <label for="skills-input">Skills (comma separated)</label>
+              <textarea id="skills-input" class="form-control" placeholder="e.g. JavaScript, React, Node.js, Python, Project Management, SQL" rows="6"></textarea>
+              <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem;">Enter key professional competencies separated by a comma (e.g. HTML, CSS, JavaScript, Git).</p>
+            </div>
+          </div>
+          <!-- SECTION 6: Certifications (Dynamic List) -->
+          <div class="form-step-content" id="sec-certifications">
+            <div class="dynamic-list" id="certifications-list-container">
+              <!-- Certifications items will be rendered dynamically -->
+            </div>
+            <div class="add-more-container">
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-add-certification">
+                + Add Certification
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Footer Actions -->
+        <div class="form-actions">
+          <div>
+            <button type="button" class="btn btn-secondary" id="btn-prev-step" style="display: none;">Back</button>
+            <a href="index.html" class="btn btn-secondary" id="btn-back-templates">Templates</a>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary" id="btn-next-step">Next</button>
+            <button type="submit" class="btn btn-primary" id="btn-submit-preview" style="display: none;">Save & Preview</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="logo-section">
+          <div class="logo-icon">R</div>
+          <span class="logo-text" style="color: white;">ResumeLeader AI</span>
+        </div>
+        <div class="footer-creator" id="footer-creator-details">
+          <span>Created By: Harirathipa R</span>
+          <span>Contact: prathipa296@gmail.com</span>
+        </div>
+        <div>
+          <a href="https://digitalheroesco.com" target="_blank" class="hero-btn" id="footer-hero-btn">Built for Digital Heroes</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ResumeLeader AI. All rights reserved.</p>
+        <p>Premium Free ATS-Friendly Resume Builder</p>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
